@@ -1,8 +1,8 @@
-from main import *
 from dataclasses import dataclass
+from typing import Tuple,List,Optional
 
 @dataclass
-class Base_Bioreactor_Arguments():
+class Bioreactor_default_parameters:
     Mumax: float = 0.5
     Ks: float = 0.1
     X_Kd: float = 0.01
@@ -19,6 +19,20 @@ class Base_Bioreactor_Arguments():
     X_out: float = 0
     S_in: float = 0
     S_out: float = 0
+    Sf: float = 70
+    Alpha: float = 0.3
+    Beta: float = 0.05
+    Volmax: float = 7
+    Vmin: float = 1e-6
 
+@dataclass
+class ODE_default_parameters:
+    method: str = "LSODA"
+    t_span: Tuple[float,float] = (0, 10) #hrs
+    t_eval: Optional[List[float]] = None
+    rtol: float = 1e-3
+    atol: float = 1e-6
+
+from main import *
 
 
