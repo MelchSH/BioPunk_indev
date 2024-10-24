@@ -4,7 +4,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils import get_Bioreactor_Parameters
 
 class bioreactor_batch_monod():   
-    def __init__(self):
+    def __init__(self) -> None:
         pass
 
     def unpack_parameters(parameters=get_Bioreactor_Parameters):
